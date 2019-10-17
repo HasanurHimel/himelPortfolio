@@ -2,96 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="787f6174-62fe-4cc9-b20f-75e782156d87" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Himel.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/backend_all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/frontend_app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/backend_all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/frontend_app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/frontend/carousel.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/backend/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/about.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/animation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/banner.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/brand.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/contact.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/designation.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/experience.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/message.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/objective.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/offer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/portfolio.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/seo.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/skill.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/testimonial.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/frontend/carousel_bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/frontend/carousel_jequery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/frontend_app.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/frontend_bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/sass/frontend_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/backend/layout/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/My-portfolio.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/My-portfolio.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/portfolio/port2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/portfolio/port3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/portfolio/port4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/portfolio/port5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/portfolio/port6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/PortfolioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/PortfolioController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/1571156903.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/1571158133.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/images/portfolio/5d33e9eb4c0e3EPBO4886.jpeg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/animate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/font-family.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/jquery.animatedheadline.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/magnific-popup.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/normalize.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/owl.carousel.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/owl.theme.default.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/responsive.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/appp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrapp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/contact.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/custom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery-3.2.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.animatedheadline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.magnific-popup.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/jquery.waypoints.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/owl.carousel.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/particles.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/validator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/wow.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/banner.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/banner.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/brand.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/brand.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/contact.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/contact.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/portfolio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/portfolio.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/service.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/service.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/Partials/testimonial.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/Partials/testimonial.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Frontend/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Frontend/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/portfolio.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/portfolio.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/layout/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/layout/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +138,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js/backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -315,6 +235,9 @@
       <workItem from="1571064106384" duration="9068000" />
       <workItem from="1571077948315" duration="5359000" />
       <workItem from="1571155152952" duration="11559000" />
+      <workItem from="1571232665322" duration="14128000" />
+      <workItem from="1571283440740" duration="43000" />
+      <workItem from="1571284976251" duration="3061000" />
     </task>
     <servers />
   </component>

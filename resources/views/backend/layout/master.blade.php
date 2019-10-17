@@ -193,14 +193,14 @@
 
                     <li class="nav-item">
                         <router-link to="/banner" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-adobe nav-icon"></i>
                             <p>Banner photo</p>
                         </router-link>
                     </li>
 
                     <li class="nav-item">
                         <router-link to="/designation" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-accusoft nav-icon"></i>
                             <p>Designation</p>
                         </router-link>
                     </li>
@@ -209,7 +209,7 @@
 
                     <li class="nav-item has-treeview ">
                         <a href="#" class="nav-link">
-                            <i class="fas fa-users-cog nav-icon orange"></i>
+                            <i class="fab fa-accessible-icon nav-icon orange"></i>
                             <p>
                                 Professional details
                                 <i class="right fa fa-angle-left"></i>
@@ -219,19 +219,19 @@
 
                             <li class="nav-item">
                                 <router-link to="/objective" class="nav-link">
-                                    <i class="fab fa-typo3 nav-icon"></i>
+                                    <i class="fab fa-angellist nav-icon"></i>
                                     <p>Careeer Objective</p>
                                 </router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link to="/about" class="nav-link">
-                                    <i class="fab fa-typo3 nav-icon"></i>
+                                    <i class="fab fa-app-store-ios nav-icon"></i>
                                     <p>About</p>
                                 </router-link>
                             </li>
                             <li class="nav-item">
                                 <router-link to="/skill" class="nav-link">
-                                    <i class="fab fa-typo3 nav-icon"></i>
+                                    <i class="fab fa-affiliatetheme nav-icon"></i>
                                     <p>Skill</p>
                                 </router-link>
                             </li>
@@ -241,41 +241,41 @@
 
                     <li class="nav-item">
                         <router-link to="/experience" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-500px nav-icon"></i>
                             <p>Experience</p>
                         </router-link>
                     </li>
                     <li class="nav-item">
                         <router-link to="/offer" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-envira nav-icon"></i>
                             <p>What I Offer</p>
                         </router-link>
                     </li>
 
                     <li class="nav-item">
                         <router-link to="/portfolio" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-acquisitions-incorporated nav-icon"></i>
                             <p>Portfolio</p>
                         </router-link>
                     </li>
 
                     <li class="nav-item">
                         <router-link to="/testimonial" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-creative-commons-by nav-icon"></i>
                             <p>Testimonial</p>
                         </router-link>
                     </li>
 
                     <li class="nav-item">
                         <router-link to="/contact" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-asymmetrik nav-icon"></i>
                             <p>Contact</p>
                         </router-link>
                     </li>
 
                     <li class="nav-item">
                         <router-link to="/brand" class="nav-link">
-                            <i class="fab fa-searchengin nav-icon"></i>
+                            <i class="fab fa-affiliatetheme nav-icon"></i>
                             <p>Brand</p>
                         </router-link>
                     </li>

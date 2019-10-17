@@ -4689,6 +4689,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -4702,6 +4717,7 @@ __webpack_require__.r(__webpack_exports__);
       editMode: false,
       portfolios: {},
       images: [],
+      editimages: [],
       form: new vform__WEBPACK_IMPORTED_MODULE_0___default.a({
         id: '',
         project_name: '',
@@ -4709,11 +4725,17 @@ __webpack_require__.r(__webpack_exports__);
         client: '',
         link: '',
         completed: '',
+        editimages: [],
         images: [],
         description: '',
         photo: ''
       })
     };
+  },
+  watch: {
+    editimages: function editimages(newValues) {
+      this.form.editimages = newValues;
+    }
   },
   methods: {
     // multiple image upload start
@@ -4735,6 +4757,31 @@ __webpack_require__.r(__webpack_exports__);
     },
     dataChange: function dataChange(data) {
       console.log(data);
+    },
+    deleteImage: function deleteImage(id) {
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then(function (result) {
+        if (result.value) {
+          axios.get('api/portfolio/deleteImage/' + id).then(function () {
+            Fire.$emit('imageDelete');
+            Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
+          })["catch"](function () {
+            Swal.fire({
+              type: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!' // footer: '<a href>Why do I have this issue?</a>'
+
+            });
+          });
+        }
+      });
     },
     // multiple image upload end
     imageUrl: function imageUrl(e) {
@@ -4774,6 +4821,12 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('api/portfolio/existingImages/' + portfolio.id).then(function (_ref) {
         var data = _ref.data;
         _this3.images = data;
+      });
+      Fire.$on('imageDelete', function () {
+        axios.get('api/portfolio/existingImages/' + portfolio.id).then(function (_ref2) {
+          var data = _ref2.data;
+          _this3.images = data;
+        });
       });
     },
     updateportfolio: function updateportfolio() {
@@ -4820,8 +4873,8 @@ __webpack_require__.r(__webpack_exports__);
     loadportfolios: function loadportfolios() {
       var _this6 = this;
 
-      axios.get('api/portfolio').then(function (_ref2) {
-        var data = _ref2.data;
+      axios.get('api/portfolio').then(function (_ref3) {
+        var data = _ref3.data;
         _this6.portfolios = data;
       });
     },
@@ -4849,8 +4902,8 @@ __webpack_require__.r(__webpack_exports__);
     this.$Progress.start();
     Fire.$on('searching', function () {
       var query = _this7.$parent.search;
-      axios.get('api/searching?q=' + query).then(function (_ref3) {
-        var data = _ref3.data;
+      axios.get('api/searching?q=' + query).then(function (_ref4) {
+        var data = _ref4.data;
         _this7.portfolios = data;
       })["catch"](function () {
         console.log('not working');
@@ -7738,7 +7791,7 @@ exports = module.exports = __webpack_require__(/*! ../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\n.text-small[data-v-10e59822] {\n  font-size: 11px;\n}\n.position-relative[data-v-10e59822] {\n  position: relative;\n}\n.position-absolute[data-v-10e59822] {\n  position: absolute;\n}\n.text-center[data-v-10e59822] {\n  text-align: center;\n}\n.text-primary[data-v-10e59822] {\n  color: #2fa3e6;\n}\n.display-flex[data-v-10e59822] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flex-column[data-v-10e59822] {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.flex-wrap[data-v-10e59822] {\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.justify-content-center[data-v-10e59822] {\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.justify-content-between[data-v-10e59822] {\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.justify-content-end[data-v-10e59822] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.align-items-center[data-v-10e59822] {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.full-width[data-v-10e59822] {\n  width: 100%;\n}\n.full-height[data-v-10e59822] {\n  height: 100%;\n}\n.cursor-pointer[data-v-10e59822] {\n  cursor: pointer;\n}\n.centered[data-v-10e59822] {\n  left: 50%;\n  -webkit-transform: translate(-50%,-50%);\n          transform: translate(-50%,-50%);\n  top: 50%;\n  position: absolute;\n  display: block;\n}\n.image-container[data-v-10e59822] {\n  width: 190px;\n  height: 180px;\n  border: 1px dashed #D6D6D6;\n  border-radius: 4px;\n  background-color: #fff;\n}\n.image-center[data-v-10e59822] {\n  width: 100%;\n  height: 100%;\n}\n.image-icon-drag[data-v-10e59822] {\n  fill: #c9c8c8;\n  height: 50px;\n  width: 50px;\n}\n.drag-text[data-v-10e59822] {\n  padding-top: 5px;\n  color: #777;\n  font-weight: 400;\n  line-height: 1.5;\n}\n.browse-text[data-v-10e59822] {\n  font-size: 86%;\n  color: #206ec5;\n  text-decoration: none;\n}\n.image-input[data-v-10e59822] {\n  overflow: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  bottom: 0;\n}\n.image-input label[data-v-10e59822] {\n  display: block;\n}\n.drag-upload-cover[data-v-10e59822] {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: #FCFEFF;\n  opacity: .9;\n  z-index: 1;\n  margin: 5px;\n  border: 2px dashed #268DDD;\n}\n.drag-upload-cover[data-v-10e59822] {\n  font-weight: 400;\n  font-size: 20px;\n}\n.icon-drag-drop[data-v-10e59822] {\n  height: 50px;\n  width: 50px;\n  fill: #2fa3e6;\n}\n.drop-text-here[data-v-10e59822] {\n  margin: 0;\n  line-height: 1.5;\n}\n.display-none[data-v-10e59822] {\n  display: none;\n}\n\n/* list images*/\n.image-list[data-v-10e59822] {\n  border: 1px solid #D6D6D6;\n}\n.preview-image[data-v-10e59822] {\n  height: 140px;\n  padding: 5px;\n  border-radius: 15px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.image-overlay[data-v-10e59822] {\n  background: rgba(0,0,0,.7);\n  z-index: 10;\n  border-radius: 5px;\n  opacity: 0;\n  -webkit-transition: all .3s ease-in-out 0s;\n  transition: all .3s ease-in-out 0s;\n}\n.image-overlay-details[data-v-10e59822] {\n  position: absolute;\n  z-index: 11;\n  opacity: 0;\n  -webkit-transform: translate(0,-50%);\n          transform: translate(0,-50%);\n  top: 50%;\n}\n.icon-overlay[data-v-10e59822] {\n  width: 40px;\n  height: 40px;\n  fill: #fff;\n}\n.preview-image:hover .image-overlay[data-v-10e59822], .preview-image:hover .image-overlay-details[data-v-10e59822]{\n  opacity: 1;\n}\n.img-responsive[data-v-10e59822] {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.show-img[data-v-10e59822] {\n  max-height: 100px;\n  max-width: 140px;\n  display: block;\n  vertical-align: middle;\n}\n/*image bottom*/\n.image-bottom[data-v-10e59822] {\n  bottom: 0;\n  left: 0;\n  height: 40px;\n  padding: 5px 10px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.image-primary[data-v-10e59822] {\n  border-radius: 4px;\n  background-color: #e3edf7;\n  padding: 3px 7px;\n  font-size: 11px;\n  margin-right: 5px;\n}\n.image-icon-primary[data-v-10e59822] {\n  width: 10px;\n  height: 10px;\n  margin-right: 2px;\n}\n.image-icon-delete[data-v-10e59822] {\n  height: 14px;\n  width: 14px;\n  fill: #222;\n}\n.image-edit[data-v-10e59822] {\n  margin-right: 10px;\n}\n.image-icon-edit[data-v-10e59822] {\n  height: 14px;\n  width: 14px;\n  fill: #222;\n}\n.image-list-container[data-v-10e59822] {\n  max-width: 190px;\n  min-height: 50px;\n  margin-top: 10px;\n}\n.image-list-container .image-list-item[data-v-10e59822] {\n  height: 32px;\n  width: 32px;\n  border-radius: 4px;\n  border: 1px solid #D6D6D6;\n}\n.image-list-container .image-list-item[data-v-10e59822]:not(:last-child) {\n  margin-right: 5px;\n  margin-bottom: 5px;\n}\n.image-list-container .image-list-item .show-img[data-v-10e59822] {\n  max-width: 25px;\n  max-height: 17px;\n}\n.image-list-container .image-highlight[data-v-10e59822] {\n  border: 1px solid #2fa3e7;\n}\n.add-image-svg[data-v-10e59822] {\n  width: 12px;\n  height: 12px;\n  fill: #222;\n}\n.input-add-image[data-v-10e59822] {\n  overflow: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 11;\n}\n.input-add-image label[data-v-10e59822] {\n  display: block;\n}\n.image-icon-info[data-v-10e59822] {\n  width: 14px;\n  height: 14px;\n  fill: #222;\n}\n.mark-text-primary[data-v-10e59822] {\n  color: #034694;\n}\n.popper-custom[data-v-10e59822] {\n  background: #000;\n  padding: 10px;\n  border: none;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  color: white;\n  text-align: left;\n  font-size: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.text-small[data-v-10e59822] {\n  font-size: 11px;\n}\n.position-relative[data-v-10e59822] {\n  position: relative;\n}\n.position-absolute[data-v-10e59822] {\n  position: absolute;\n}\n.text-center[data-v-10e59822] {\n  text-align: center;\n}\n.text-primary[data-v-10e59822] {\n  color: #2fa3e6;\n}\n.display-flex[data-v-10e59822] {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n.flex-column[data-v-10e59822] {\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n}\n.flex-wrap[data-v-10e59822] {\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n}\n.justify-content-center[data-v-10e59822] {\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n}\n.justify-content-between[data-v-10e59822] {\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n}\n.justify-content-end[data-v-10e59822] {\n  -webkit-box-pack: end;\n      -ms-flex-pack: end;\n          justify-content: flex-end;\n}\n.align-items-center[data-v-10e59822] {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.full-width[data-v-10e59822] {\n  width: 100%;\n}\n.full-height[data-v-10e59822] {\n  height: 100%;\n}\n.cursor-pointer[data-v-10e59822] {\n  cursor: pointer;\n}\n.centered[data-v-10e59822] {\n  left: 50%;\n  -webkit-transform: translate(-50%,-50%);\n          transform: translate(-50%,-50%);\n  top: 50%;\n  position: absolute;\n  display: block;\n}\n.image-container[data-v-10e59822] {\n  width: 432px;\n  height: 180px;\n  border: 1px dashed #D6D6D6;\n  border-radius: 4px;\n  background-color: #fff;\n}\n.image-center[data-v-10e59822] {\n  width: 100%;\n  height: 100%;\n}\n.image-icon-drag[data-v-10e59822] {\n  fill: #c9c8c8;\n  height: 50px;\n  width: 50px;\n}\n.drag-text[data-v-10e59822] {\n  padding-top: 5px;\n  color: #777;\n  font-weight: 400;\n  line-height: 1.5;\n}\n.browse-text[data-v-10e59822] {\n  font-size: 86%;\n  color: #206ec5;\n  text-decoration: none;\n}\n.image-input[data-v-10e59822] {\n  overflow: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  bottom: 0;\n}\n.image-input label[data-v-10e59822] {\n  display: block;\n}\n.drag-upload-cover[data-v-10e59822] {\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  background: #FCFEFF;\n  opacity: .9;\n  z-index: 1;\n  margin: 5px;\n  border: 2px dashed #268DDD;\n}\n.drag-upload-cover[data-v-10e59822] {\n  font-weight: 400;\n  font-size: 20px;\n}\n.icon-drag-drop[data-v-10e59822] {\n  height: 50px;\n  width: 50px;\n  fill: #2fa3e6;\n}\n.drop-text-here[data-v-10e59822] {\n  margin: 0;\n  line-height: 1.5;\n}\n.display-none[data-v-10e59822] {\n  display: none;\n}\n\n/* list images*/\n.image-list[data-v-10e59822] {\n  border: 1px solid #D6D6D6;\n}\n.preview-image[data-v-10e59822] {\n  height: 140px;\n  padding: 5px;\n  border-radius: 15px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.image-overlay[data-v-10e59822] {\n  background: rgba(0,0,0,.7);\n  z-index: 10;\n  border-radius: 5px;\n  opacity: 0;\n  -webkit-transition: all .3s ease-in-out 0s;\n  transition: all .3s ease-in-out 0s;\n}\n.image-overlay-details[data-v-10e59822] {\n  position: absolute;\n  z-index: 11;\n  opacity: 0;\n  -webkit-transform: translate(0,-50%);\n          transform: translate(0,-50%);\n  top: 50%;\n}\n.icon-overlay[data-v-10e59822] {\n  width: 40px;\n  height: 40px;\n  fill: #fff;\n}\n.preview-image:hover .image-overlay[data-v-10e59822], .preview-image:hover .image-overlay-details[data-v-10e59822]{\n  opacity: 1;\n}\n.img-responsive[data-v-10e59822] {\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.show-img[data-v-10e59822] {\n  max-height: 100px;\n  max-width: 140px;\n  display: block;\n  vertical-align: middle;\n}\n/*image bottom*/\n.image-bottom[data-v-10e59822] {\n  bottom: 0;\n  left: 0;\n  height: 40px;\n  padding: 5px 10px;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\n.image-primary[data-v-10e59822] {\n  border-radius: 4px;\n  background-color: #e3edf7;\n  padding: 3px 7px;\n  font-size: 11px;\n  margin-right: 5px;\n}\n.image-icon-primary[data-v-10e59822] {\n  width: 10px;\n  height: 10px;\n  margin-right: 2px;\n}\n.image-icon-delete[data-v-10e59822] {\n  height: 14px;\n  width: 14px;\n  fill: #222;\n}\n.image-edit[data-v-10e59822] {\n  margin-right: 10px;\n}\n.image-icon-edit[data-v-10e59822] {\n  height: 14px;\n  width: 14px;\n  fill: #222;\n}\n.image-list-container[data-v-10e59822] {\n  max-width: 190px;\n  min-height: 50px;\n  margin-top: 10px;\n}\n.image-list-container .image-list-item[data-v-10e59822] {\n  height: 32px;\n  width: 32px;\n  border-radius: 4px;\n  border: 1px solid #D6D6D6;\n}\n.image-list-container .image-list-item[data-v-10e59822]:not(:last-child) {\n  margin-right: 5px;\n  margin-bottom: 5px;\n}\n.image-list-container .image-list-item .show-img[data-v-10e59822] {\n  max-width: 25px;\n  max-height: 17px;\n}\n.image-list-container .image-highlight[data-v-10e59822] {\n  border: 1px solid #2fa3e7;\n}\n.add-image-svg[data-v-10e59822] {\n  width: 12px;\n  height: 12px;\n  fill: #222;\n}\n.input-add-image[data-v-10e59822] {\n  overflow: hidden;\n  opacity: 0;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  z-index: 11;\n}\n.input-add-image label[data-v-10e59822] {\n  display: block;\n}\n.image-icon-info[data-v-10e59822] {\n  width: 14px;\n  height: 14px;\n  fill: #222;\n}\n.mark-text-primary[data-v-10e59822] {\n  color: #034694;\n}\n.popper-custom[data-v-10e59822] {\n  background: #000;\n  padding: 10px;\n  border: none;\n  -webkit-box-shadow: none;\n          box-shadow: none;\n  color: white;\n  text-align: left;\n  font-size: 12px;\n}\n", ""]);
 
 // exports
 
@@ -66607,19 +66660,19 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     dragText: {
       type: String,
-      default: 'Kéo hình ảnh(nhiều)'
+      default: 'Upload Your Image'
     },
     browseText: {
       type: String,
-      default: '(hoặc) Chọn'
+      default: '(himel)'
     },
     primaryText: {
       type: String,
-      default: 'Mặc định'
+      default: 'Edit your image'
     },
     markIsPrimaryText: {
       type: String,
-      default: 'Đặt làm mặc định'
+      default: 'Edit your image'
     },
     popupText: {
       type: String,
@@ -73223,6 +73276,23 @@ var render = function() {
                                     "div",
                                     { staticClass: "col-md-3" },
                                     [
+                                      _c(
+                                        "a",
+                                        {
+                                          attrs: { href: "#" },
+                                          on: {
+                                            click: function($event) {
+                                              return _vm.deleteImage(image.id)
+                                            }
+                                          }
+                                        },
+                                        [
+                                          _c("i", {
+                                            staticClass: "fas fa-times-circle"
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
                                       _c("img", {
                                         attrs: {
                                           src:
@@ -73240,33 +73310,67 @@ var render = function() {
                               )
                             : _vm._e(),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "div",
-                              {
-                                staticStyle: {
-                                  display: "flex",
-                                  "justify-content": "center"
-                                },
-                                attrs: {
-                                  id:
-                                    "my-strictly-unique-vue-upload-multiple-image"
-                                }
-                              },
-                              [
-                                _c("vue-upload-multiple-image", {
-                                  attrs: { "data-images": _vm.form.images },
-                                  on: {
-                                    "upload-success": _vm.uploadImageSuccess,
-                                    "before-remove": _vm.beforeRemove,
-                                    "edit-image": _vm.editImage,
-                                    "data-change": _vm.dataChange
-                                  }
-                                })
-                              ],
-                              1
-                            )
-                          ]),
+                          _vm.editMode
+                            ? _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticStyle: {
+                                      display: "flex",
+                                      "justify-content": "center"
+                                    },
+                                    attrs: {
+                                      id:
+                                        "my-strictly-unique-vue-upload-multiple-image"
+                                    }
+                                  },
+                                  [
+                                    _c("vue-upload-multiple-image", {
+                                      attrs: { "data-images": _vm.editimages },
+                                      on: {
+                                        "upload-success":
+                                          _vm.uploadImageSuccess,
+                                        "before-remove": _vm.beforeRemove,
+                                        "edit-image": _vm.editImage,
+                                        "data-change": _vm.dataChange
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ])
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.editMode === false
+                            ? _c("div", { staticClass: "form-group" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticStyle: {
+                                      display: "flex",
+                                      "justify-content": "center"
+                                    },
+                                    attrs: {
+                                      id:
+                                        "my-strictly-unique-vue-upload-multiple-image"
+                                    }
+                                  },
+                                  [
+                                    _c("vue-upload-multiple-image", {
+                                      attrs: { "data-images": _vm.form.images },
+                                      on: {
+                                        "upload-success":
+                                          _vm.uploadImageSuccess,
+                                        "before-remove": _vm.beforeRemove,
+                                        "edit-image": _vm.editImage,
+                                        "data-change": _vm.dataChange
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ])
+                            : _vm._e(),
                           _vm._v(" "),
                           _c(
                             "div",

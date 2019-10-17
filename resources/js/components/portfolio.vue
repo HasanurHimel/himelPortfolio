@@ -133,14 +133,29 @@
 
                                         <div v-if="editMode===true" class="row col-md-12" >
                                             <div class="col-md-3" v-for="image in images">
+<!--                                                <a class="btn btn-danger" href="#" @click="deleteImage(image.id)"><i class="fas fa-trash"></i></a>-->
+                                                <a href="#" @click="deleteImage(image.id)"><i class="fas fa-times-circle"></i></a>
 
                                                 <img v-bind:src="'images/portfolio/'+image['images']" alt="" height="80px" width="80px">
+
 
                                             </div>
 
                                         </div>
 
-                                        <div class="form-group">
+                                        <div class="form-group" v-if="editMode">
+                                            <div id="my-strictly-unique-vue-upload-multiple-image" style="display: flex; justify-content: center;">
+                                                <vue-upload-multiple-image
+                                                    @upload-success="uploadImageSuccess"
+                                                    @before-remove="beforeRemove"
+                                                    @edit-image="editImage"
+                                                    @data-change="dataChange"
+                                                    :data-images="editimages"
+                                                ></vue-upload-multiple-image>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group" v-if="editMode===false">
                                             <div id="my-strictly-unique-vue-upload-multiple-image" style="display: flex; justify-content: center;">
                                                 <vue-upload-multiple-image
                                                     @upload-success="uploadImageSuccess"
@@ -211,6 +226,7 @@
                 editMode: false,
                 portfolios :{},
                 images:[],
+                editimages:[],
                 form: new Form({
                     id:'',
                     project_name:'',
@@ -218,10 +234,16 @@
                     client:'',
                     link:'',
                     completed:'',
+                    editimages:[],
                     images: [],
                     description:'',
                     photo:'',
                 })
+            }
+        },
+        watch: {
+            editimages(newValues){
+                this.form.editimages=newValues;
             }
         },
 
@@ -251,6 +273,45 @@
             dataChange (data) {
                 console.log(data)
             },
+
+            deleteImage(id){
+
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        axios.get('api/portfolio/deleteImage/'+id).then(()=> {
+                            Fire.$emit('imageDelete');
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }).catch(()=>{
+                            Swal.fire({
+                                type: 'error',
+                                title: 'Oops...',
+                                text: 'Something went wrong!',
+                                // footer: '<a href>Why do I have this issue?</a>'
+                            })
+                        });
+                    }
+                })
+
+
+            },
+
+
+
+
+
+
 
                             // multiple image upload end
 
@@ -289,13 +350,20 @@
                 this.form.fill(portfolio);
                 axios.get('api/portfolio/existingImages/'+portfolio.id).then(({ data }) => { this.images=data })
 
+                Fire.$on('imageDelete', () => {
+                    axios.get('api/portfolio/existingImages/'+portfolio.id).then(({ data }) => { this.images=data })
+
+                });
 
             },
 
             updateportfolio() {
                 this.$Progress.start();
+
+
                 this.form.put('api/portfolio/'+this.form.id).then(()=> {
                     this.$Progress.start();
+
                     Fire.$emit('portfolioOperation');
                     $('#portfolioModal').modal('hide');
                     Swal.fire(

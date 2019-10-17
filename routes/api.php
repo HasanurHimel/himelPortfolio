@@ -29,6 +29,7 @@ Route::apiResource('experience', 'Api\ExperienceController');
 Route::apiResource('offer', 'Api\OfferController');
 Route::apiResource('portfolio', 'Api\PortfolioController');
 Route::get('portfolio/existingImages/{id}', 'Api\PortfolioController@existingImages');
+Route::get('portfolio/deleteImage/{id}', 'Api\PortfolioController@deleteImage');
 Route::apiResource('testimonial', 'Api\TestimonialController');
 Route::apiResource('contact', 'Api\ContactController');
 Route::apiResource('brand', 'Api\BrandController');

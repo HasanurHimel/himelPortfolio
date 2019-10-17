@@ -33,15 +33,6 @@ class PortfolioController extends Controller
 
 
 
-
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 //        $images=$request->images;
@@ -120,6 +111,17 @@ class PortfolioController extends Controller
         //
     }
 
+
+
+
+    public function deleteImage($id){
+        $existingImage=PortfolioImage::findOrFail($id);
+        $image_path="images/portfolio/$existingImage->images";
+//        return $image_path;
+        \File::delete($image_path);
+        $existingImage->delete();
+    }
+
     /**
      * Update the specified resource in storage.
      *
@@ -129,6 +131,8 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         $this->validate($request,[
             'project_name'=>'required|string|max:50',
             'project_type'=>'required|string|max:30',
@@ -155,32 +159,24 @@ class PortfolioController extends Controller
 
         }
 
-//        $existingImages=PortfolioImage::where('portfolio_id', $id)->get();
-//
-//        if ($request->images){
-//            foreach ($request->images as $image) {
-//
-//                foreach ($existingImages as $existingImage) {
-//                    if ($request->images!==$existingImage->images){
-//
-//                        $name=$image['name'];
-//                        $directory=public_path('images/portfolio/');
-//                        if ($existingImage->images){
-//                            unlink($directory.$existingImage->images);
-//                        }
-//                        Image::make($request->photo)->save($directory.$name);
-//
-//                        $existingImage->update([
-//                            'images'=>$name,
-//                        ]);
-//
-//                    }
-//                }
-//            }
-//
-//        }
+        $editImages=$request->editimages;
 
-        $portfolio->update($request->except('photo'));
+
+        if ($editImages){
+            foreach ($editImages as $image) {
+                $name=$image['name'];
+                $directory=public_path('images/portfolio/');
+                Image::make($image['path'])->save($directory.$name);
+
+                PortfolioImage::create([
+                    'images' =>$name,
+                    'portfolio_id' =>$id
+                ]);
+
+
+            }
+        }
+
 
         return 'ok';
     }
